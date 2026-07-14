@@ -20,7 +20,7 @@ class GestureDataset(Dataset):
     def __init__(self):
         love_data = np.load('data/data_love.npy')
         poop_data = np.load('data/data_poop.npy')
-        fuck_data = np.load('data/data_fuck.npy')
+        fuck_data = np.load('data/data_mountain.npy')
 
         hello_label = np.zeros(len(love_data))
         fist_label = np.ones(len(poop_data)) #63, 30
