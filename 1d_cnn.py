@@ -18,9 +18,9 @@ BATCH_SIZE= 30
 
 class GestureDataset(Dataset):
     def __init__(self):
-        love_data = np.load('data_love.npy')
-        poop_data = np.load('data_poop.npy')
-        fuck_data = np.load('data_fuck.npy')
+        love_data = np.load('data/data_love.npy')
+        poop_data = np.load('data/data_poop.npy')
+        fuck_data = np.load('data/data_fuck.npy')
 
         hello_label = np.zeros(len(love_data))
         fist_label = np.ones(len(poop_data)) #63, 30
@@ -123,7 +123,7 @@ mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 seq_data = deque(maxlen=30)
 
 with torch.no_grad():
