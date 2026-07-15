@@ -20,14 +20,14 @@ class GestureDataset(Dataset):
     def __init__(self):
         love_data = np.load('data/data_love.npy')
         poop_data = np.load('data/data_poop.npy')
-        fuck_data = np.load('data/data_mountain.npy')
+        mountain_data = np.load('data/data_mountain.npy')
 
         hello_label = np.zeros(len(love_data))
-        fist_label = np.ones(len(poop_data)) #63, 30
-        fuck_label = np.full(len(fuck_data), 2)
+        fist_label = np.ones(len(poop_data))
+        mountain_label = np.full(len(mountain_data), 2)
 
-        self.x_data = np.concatenate((love_data, poop_data, fuck_data), axis=0)  # 총 200개
-        self.y_data = np.concatenate((hello_label, fist_label, fuck_label), axis=0)
+        self.x_data = np.concatenate((love_data, poop_data, mountain_data), axis=0)
+        self.y_data = np.concatenate((hello_label, fist_label, mountain_label), axis=0)
 
     def __len__(self):
         return len(self.x_data)
